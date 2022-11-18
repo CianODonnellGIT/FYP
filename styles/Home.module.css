@@ -1,5 +1,5 @@
 .container {
-  padding: 0 2rem;
+  padding: 0 20rem;
 }
 
 .main {
@@ -14,10 +14,11 @@
 
 .footer {
   display: flex;
+  flex-direction: column;
   flex: 1;
   padding: 2rem 0;
   border-top: 1px solid #eaeaea;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -95,6 +96,33 @@
 .card h2 {
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
+}
+
+.form-signin {
+  width: 40%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 15;
+  border-bottom-left-radius: 15;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 15;
+  border-top-right-radius:15;
 }
 
 .card p {
