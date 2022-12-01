@@ -1,11 +1,12 @@
 .header {
   width: 100%;
-  height: 5rem;
+  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #e6a51a;
+  background-color: #30113a;
   padding: 0 10%;
+  
 }
 
 .logo {
@@ -26,6 +27,7 @@
   padding: 0;
   display: flex;
   align-items: baseline;
+  
 }
 
 .header li {
@@ -42,4 +44,34 @@
 .header a:active,
 .header a.active {
   color: white;
+}
+
+
+/* Style the tab */
+.database {
+  
+  display: flex;
+  flex-direction: row;
+  color: white;
+  overflow:initial;
+  border:2px solid rgb(19, 77, 11);
+  background-color:#4c205a;
+  width: 100%;
+  outline:aquamarine;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+
+/* Style the buttons inside the tab */
+
+
+.database :hover{
+  background-color:#8d33a8;
+}
+
+/* Change background color of buttons on hover */
+.tabLinks:hover {
+  background-color: #ddd;
 }

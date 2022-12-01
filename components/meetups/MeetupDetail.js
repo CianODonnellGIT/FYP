@@ -7,7 +7,7 @@ function MeetupDetail(props) {
     const router = useRouter();
 
     function showDetailsHandler() {
-        router.push('/');
+        router.push('/home');
       }
    
     return (
