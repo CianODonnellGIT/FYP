@@ -1,12 +1,12 @@
 // our-dimain.com/new-meetup
-import NewMeetupForm from '../../components/meetups/NewMeetupForm'
+import NewEmployeeForm from '../../components/meetups/NewEmployeeForm'
 
 function NewMeetupPage() {
     function addMeetupHandler(enteredMeetupData) {
 
     }
 
-    return <NewMeetupForm onAddMeetup={addMeetupHandler}/>
+    return <NewEmployeeForm onAddMeetup={addMeetupHandler}/>
 }
 
 export default NewMeetupPage

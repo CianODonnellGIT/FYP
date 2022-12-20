@@ -38,7 +38,7 @@ function Login() {
               <input type="checkbox" value="remember-me" /> Remember me
             </label>
           </div>
-            <Link href='/home'>Log in</Link>
+           {/* <Link href='/home'>Log in</Link> */}
           <h3 className="w-100 btn btn-lg btn-primary" type="submit"
           onClick ={()=> validation()}>Sign in</h3>
         </form>
