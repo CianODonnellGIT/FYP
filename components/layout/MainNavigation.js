@@ -31,7 +31,7 @@ function MainNavigation() {
     <div className= {classes.database}>
       <button className= {classes.database} onClick={() => showEmployee()}>Database</button>
       <button className= {classes.database} >Clock I/O</button>
-      <button className= {classes.database} >Etc</button>
+      <button className= {classes.database} >Door Access</button>
       <button className= {classes.database} >Etc</button>
     </div>
 
