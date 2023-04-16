@@ -1,0 +1,58 @@
+  
+  .container{
+    position: absolute;
+    width: 85%;
+    height: 82.5%;
+    margin-left: 15%;
+    background-size: cover;
+    background-color: #e9f1fa;
+    border: 3px solid #00abe4;
+  }
+  
+  .container section{
+    margin: 0 auto;
+    padding: 1rem 1rem 1rem;
+    
+    border-top: 3px solid #00abe4;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .read {
+    white-space: pre-wrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .empList{
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid grey;
+  }
+
+  .empList span{
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .list{
+    
+    background-color: rgb(255, 237, 216);
+    text-align: center;
+    border: 3px solid #00abe4;
+    border-radius: 8px;
+    height: 450px; 
+    width: 65%;
+    overflow: scroll;
+  }
+  
