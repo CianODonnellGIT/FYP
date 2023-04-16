@@ -1,0 +1,55 @@
+.container{
+    position: fixed;
+    width: 85%;
+    margin-left: 15%;
+    height: 70%;
+    background-size: cover;
+    background-color: #e9f1fa;
+    border: 3px solid #00abe4;
+    padding: 100;
+  }
+  
+  .container section{
+    margin: 0 auto;
+    padding: 1rem 1rem 1rem;
+    
+    border-top: 3px solid #00abe4;
+  }
+  
+  .read {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .list{
+    background-color: rgb(255, 237, 216);
+    text-align: center;
+    border: 3px solid #00abe4;
+    border-radius: 8px;
+    height: 400px; 
+    width: 60%;
+    overflow-y: scroll;
+  }
+  
+  .empList{
+    display: table;
+    text-align: center;
+    width: 100%;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid grey;
+  }
+
+  .empList span{
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .icon{
+    color: rgb(254, 0, 51);
+    cursor: pointer;
+  }
