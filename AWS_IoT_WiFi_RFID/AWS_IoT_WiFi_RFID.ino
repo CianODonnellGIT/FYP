@@ -1,7 +1,7 @@
 /*
   AWS IoT WiFi
 
-  This sketch securely connects to an AWS IoT using MQTT over WiFi.
+  This sketch securely connects to AWS IoT using MQTT over WiFi.
   It uses a private key stored in the ATECC508A and a public
   certificate for SSL/TLS authetication.
 
@@ -44,7 +44,6 @@
 #include <ArduinoBearSSL.h>
 #include <ArduinoECCX08.h>
 #include <ArduinoMqttClient.h>
-//#include <Arduino_JSON>
 #include <WiFiNINA.h> // wifi library for mkr1010
 
 #include "arduino_secrets.h"
@@ -70,9 +69,9 @@ unsigned long lastMillis = 0;
 
 void setup() {
   Serial.begin(115200);
-  while (!Serial);
+ // while (!Serial);
   SPI.begin();        // Init SPI bus
-  mfrc522.PCD_Init(); // Init MFRC522 card
+  mfrc522.PCD_Init(); // Init MFRC522 card reader
 
   // Prepare the key (used both as key A and as key B)
   // using FFFFFFFFFFFFh which is the default at chip delivery from the factory
@@ -127,15 +126,9 @@ void loop() {
 
   // poll for new MQTT messages and send keep alives
   mqttClient.poll();
-  // publish a message roughly every  30s.
- // if (millis() - lastMillis > 30000) {
-   // lastMillis = millis();
+  mfrc522_rfid();
+  getTime();
   
-      
-    mfrc522_rfid();
-    getTime();
-  
- // }
 }
 
 unsigned long getTime() {
@@ -222,7 +215,7 @@ void onMessageReceived(int messageSize) {
  //dump array function
 void dump_byte_array(byte *buffer, byte bufferSize) {
     for (byte i = 0; i < bufferSize; i++) {
-        Serial.print(buffer[i] < 0x10 ? " 0" : " ");
+        Serial.print(buffer[i] < 0x10 ? "0" : "");
         Serial.print(buffer[i], HEX);
     }
 }
@@ -231,10 +224,6 @@ void mfrc522_rfid(){
   String content = "";
   byte letter;
  
-    // check network connection every 10s
-  //  delay(10000);
-    //printData();
-   // Serial.println("------------------");
     // Reset the loop if no new card present on the sensor/reader. This saves the entire process when idle.
     if ( ! mfrc522.PICC_IsNewCardPresent())
         return;
@@ -242,7 +231,8 @@ void mfrc522_rfid(){
     // Select one of the cards
     if ( ! mfrc522.PICC_ReadCardSerial())
         return;
-    
+
+  /*  
     // Show some details of the PICC (that is: the tag/card)
     Serial.print(F("Card UID:"));
     dump_byte_array(mfrc522.uid.uidByte, mfrc522.uid.size);
@@ -258,24 +248,23 @@ void mfrc522_rfid(){
         Serial.println(F("This sample only works with MIFARE Classic cards."));
         return;
     }
-
+      */
    
     Serial.print("UID Card:");
     for (byte i = 0; i < mfrc522.uid.size; i++) {
-      Serial.print(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " ");
+      Serial.print(mfrc522.uid.uidByte[i] < 0x10 ? "0" : "");
       Serial.print(mfrc522.uid.uidByte[i], HEX);
-      content.concat(String(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " "));
+      content.concat(String(mfrc522.uid.uidByte[i] < 0x10 ? "0" : ""));
       content.concat(String(mfrc522.uid.uidByte[i], HEX));
     }
 
     Serial.println();
     content.toUpperCase();
-    if(content.substring(1) == "A1 5B 8E 09"){
+    if(content == "A15B8E09" || content == "C7823904" || content == "B7C73904" || content == "1E523904" || content == "FEB63904" ){
       Serial.println("Access Granted");
       Serial.println();
           
-  
-      
+
       WiFiDrv:: analogWrite(25, 0);
       WiFiDrv:: analogWrite(26, 255);
       WiFiDrv:: analogWrite(27, 0);
