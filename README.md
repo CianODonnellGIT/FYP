@@ -1,20 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<img width="288" alt="Logo1" src="https://user-images.githubusercontent.com/115069068/234639763-7e2fa9df-27b1-4626-8ce6-f2b6fadf2e5d.png">
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Welcome to the Scan & Go Github Repo! 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Heres a link to the website which is deployed using AWS Amplify: 
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+https://main.d2xu1i4qh95c6u.amplifyapp.com/main
+
+## Whats included in the Repository
+
+### C++/C code 
+
+### JavaScript code
+
+### Lambda Function Code
+
+
+
+
+
+
 
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
