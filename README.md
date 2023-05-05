@@ -4,41 +4,34 @@
 
 Welcome to the Scan & Go Github Repo! 
 
-Heres a link to the website which is deployed using AWS Amplify: 
+Here's a link to the Scan & Go Systems web app which is deployed using AWS Amplify: 
 
-https://main.d2xu1i4qh95c6u.amplifyapp.com/main
+https://main.dshngqz5l8v9y.amplifyapp.com
 
-## Whats included in the Repository
+## What's included in the Repository
 
-### C++/C code 
+### C++ code 
+The C++ code in this project is written for the functionality of the project's hardware elements, the MKR1010 WiFi Board and the MFRC/RC-522 module. This code is located in the AWS_IoT_WiFi_RFID folder. This code controls WiFi connection, LED functionality, RFID module/cards functionality and connection to AWS IoT Core.
 
-### JavaScript code
-
-### Lambda Function Code
-
+<img width="469" alt="image" src="https://user-images.githubusercontent.com/115069068/236557127-c0b883af-d8bb-422a-a8d3-de6d9f494ba1.png">
 
 
+### Full Stack web app code
+The code for the Next.js full stack web application is in this section. This is where the bulk of the Javascript code is written and where all the CSS code is located. This code covers the backend and frontend for the webapp, this includes authentication, CRUD operations, protecting routes, MySQL database connection and more. This is all accomplished with the use of node.js. The files and folders in the image below are for the next.js web app.
+
+<img width="488" alt="image" src="https://user-images.githubusercontent.com/115069068/236556811-b30a04f6-b668-4216-ab70-33e3795451d1.png">
+
+
+### Lambda function code
+This section holds the JavaScript code used in the AWS Lambda function. The code is a short JavaScript programme which connects to a MySQL database and inserts two fields of information into a database table. the first field being a timestamp generated in the lambda code, and a card ID which is pulled from AWS IoT Core with the aid of lambda triggers. The lambda function also makes use of node.js. This code can be found in the AWS Lambda Programme.
+
+<img width="444" alt="image" src="https://user-images.githubusercontent.com/115069068/236556895-8f07595d-0432-45fc-8948-63d7b642e919.png">
+
+
+### Scan & Go poster, presentation and report pdf files
+The files for the Scan & Go project poster, presentation and report are available to view or download in the ScanGoPdfDocs folder.
+
+<img width="439" alt="image" src="https://user-images.githubusercontent.com/115069068/236557809-853d16a8-3b35-4604-8bf4-249e9c9b757c.png">
 
 
 
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
