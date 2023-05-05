@@ -1,46 +1,51 @@
-import Link from 'next/link'
+/*
+This code was inspired by the following reference
+    GitHub, "auth0/nextjs-auth0: Next.js SDK for signing in with Auth0" [Online]. Available: https://github.com/auth0/nextjs-auth0.
+*/
+import { useUser } from "@auth0/nextjs-auth0/client";
 import styles from './Login.module.css'
-import cn from 'classnames'
-import { useState } from 'react'
-import { useRouter } from 'next/router';
+import Link from 'next/link'
 
-export default Login;
 
-function Login() {
- 
-  const router = useRouter();
-  
-  function validation() {
-    let username = document.getElementById("username").value
-    let password = document.getElementById("password").value
-    if(username == 'g00358872@atu.ie' && password == 'cian' ){
-      router.push('/main')
-    }
+export default function Login() {
+  const { user, error, isLoading } = useUser();
+
+
+  if (isLoading)
+    return <div className={styles.head}>....Loading</div>
+
+  if (error)
+    return <div className={styles.head}>{error.message}</div>
+
+  if (user) {
+    return (
+      <>
+        <div className={styles.container}>
+          <div className={styles.main}>
+            <h1 className={styles.head}>Welcome</h1>
+            <h3 className={styles.success}>Sign in successful</h3>
+            <nav>
+              <ul>
+                <Link className={styles.button} href='/main'>Continue to Main</Link>  
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </>
+    )
   }
+
   return (
     <>
-    
-      <div className = {styles.container}>
+      <div className={styles.container}>
         <div className={styles.main}>
           <h1 className={styles.head}>Employee Logs</h1>
           <h3>Sign In</h3>
-          <div className={styles.formfloating}>  
-            <input className = {styles.input} id="username" placeholder="email@example.com" />
-          </div>
-          <div className={styles.formfloating}>
-            <input type="password" className = {styles.input} id="password" placeholder="Password" />
-          </div>
-          <div className={styles.checkbox}>
-            <label>
-              <input type="checkbox" value="remember-me" /> Remember me
-            </label>
-          </div>
-            {/* <Link href='/home'>Log in</Link> */}
-              <input
-                className={styles.button}
-                value='Sign In'
-                type='button'
-                onClick ={()=> validation()}/>
+          <nav>
+            <ul>            
+              <Link className={styles.button} href='/api/auth/login'>Login</Link>             
+            </ul>
+          </nav>
         </div>
       </div>
     </>
