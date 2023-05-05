@@ -1,6 +1,5 @@
-import { useEffect, useState, useRef } from "react";
+import { useState } from "react";
 import DoorAccessLog from "../comp/DoorAccessLog";
-import Crud from "../comp/Crud";
 import AddEmp from "../comp/AddEmp";
 import EditEmp from "../comp/EditEmployee";
 import EmpList from "../comp/EmployeeList";
@@ -67,15 +66,13 @@ function MainNavigation() {
       <div className={styles.logo} onClick = {() => goHome()} >Scan & Go Systems</div>
       <nav>
         <ul>
-            <Link href='/employeeCRUD' className={styles.crudL}>CRUD</Link>
           <li>
-            <Link href='/'>Logout</Link>
+            <Link href='/api/auth/logout'>Logout</Link>
           </li>
         </ul>
       </nav>
     </header>
 
-    
     <div className= {styles.selection}>
       <button className= {styles.database} onClick={showTableHandle}>Door Logs</button>
       <div>{showTable && <DoorAccessLog />}</div>
@@ -100,8 +97,6 @@ function MainNavigation() {
         </footer>
         </section>
     </section>
-    
-
   </>
   );
 }
